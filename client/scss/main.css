@@ -1,0 +1,48 @@
+.wrapper {
+  height: 100%;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.container {
+  width: 962px;
+}
+
+.container-table {
+  display: table;
+}
+.vertical-center-row {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.panel-h {
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.general-form {
+  margin: 25px;
+}
+
+.general-form input {
+  margin-bottom: 10px;
+}
+
+.general-form-btn {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.sort-tag {
+  color: #000;
+}
+
+.sort-tag:hover {
+  text-decoration: none;
+}
+
+.signin-panel {
+  width: 300px;
+}

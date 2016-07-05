@@ -1,0 +1,123 @@
+<template name="dashboard">
+  {{> navBar}}
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="panel-h">Liste des produits</span>
+        <div class="pull-right">
+          <b>{{beerAmount}}</b> produit(s) sélectionné(s) / <b>{{beerTotal}}</b>
+        </div>
+        <!--<div class="pull-right">
+          <form>
+            <label class="radio-inline">
+              <input type="radio" name="sh-ql" id="inlineRadio1" value="ql-list"> Quartier latin
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="sh-cdn" id="inlineRadio2" value="cdn-list"> Côte des neiges
+            </label>
+          </form>
+        </div>-->
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            {{> sortBeers}}
+          </tr>
+        </thead>
+        <tbody>
+          {{> beers}}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="panel-h">Ajouter un produit</span>
+      </div>
+      {{> addBeer}}
+    </div>
+  </div>
+</template>
+
+<template name="navBar">
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Activer la navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">BockTomate</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{currentUser.username}}</a></li>
+          <li>{{> signOut}}</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</template>
+
+<template name="beers">
+  {{#each beer}}
+    {{> beerItem}}
+  {{/each}}
+</template>
+
+<template name="beerItem">
+  <tr class="{{#if isChecked}}info{{/if}}">
+    <td><input type="checkbox" class="toggle-beer" checked="{{isChecked}}"></td>
+    <td>{{name}}</td>
+    <td>{{brewery}}</td>
+    <td>{{type}}</td>
+    <td>{{alcohol}}%</td>
+    <td>{{ibu}}</td>
+    <td>{{priceSm}},00$</td>
+    <td>{{priceMd}},00$</td>
+    <td>{{priceLg}},00$</td>
+    <td><a href="#" class="delete-beer"><span class="glyphicon glyphicon-remove"></span></a></td>
+  </tr>
+</template>
+
+<template name="addBeer">
+  <form class="general-form">
+    {{> addBeerAlert}}
+    <input type="text" class="form-control" placeholder="Nom du produit" name="name">
+    <input type="text" class="form-control" placeholder="Brasserie d'origine" name="brewery">
+    <input type="text" class="form-control" placeholder="Classification" name="type">
+    <input type="text" class="form-control" placeholder="Taux d'alcool (%)" name="alcohol">
+    <input type="text" class="form-control" placeholder="Indice d'amertume IBU (optionnel)" name="ibu">
+    <input type="text" class="form-control" placeholder="Prix / 341ml" name="priceSm">
+    <input type="text" class="form-control" placeholder="Prix / 500ml" name="priceMd">
+    <input type="text" class="form-control" placeholder="Prix / 1,5L (optionnel)" name="priceLg">
+    <button type="submit" class="btn btn-primary general-form-btn"><span class="glyphicon glyphicon-plus"></span> Ajouter à la collection</button>
+  </form>
+</template>
+
+<template name="addBeerAlert">
+  {{#if invalidBeer}}
+    <div class="alert alert-warning" role="alert">
+    <strong>Erreur!</strong> Certains champs manquants sont obligatoires.
+    </div>
+  {{/if}}
+</template>
+
+<template name="sortBeers">
+  <th><span class="glyphicon glyphicon-star"></span></th>
+  <th><a href="#" class="sort-tag" id="sort-name">Nom <span class="caret"></span></a></th>
+  <th><a href="#" class="sort-tag" id="sort-brewery">Brasserie <span class="caret"></span></a></th>
+  <th><a href="#" class="sort-tag" id="sort-type">Type <span class="caret"></span></a></th>
+  <th><a href="#" class="sort-tag" id="sort-alcohol">% d'alcool <span class="caret"></span></a></th>
+  <th><a href="#" class="sort-tag" id="sort-ibu">IBU <span class="caret"></span></a></th>
+  <th><a href="#" class="sort-tag" id="sort-priceSm">$ / 341ml <span class="caret"></span></a></th>
+  <th><a href="#" class="sort-tag" id="sort-priceMd">$ / 500ml <span class="caret"></span></a></th>
+  <th><a href="#" class="sort-tag" id="sort-priceLg">$ / 1,5L <span class="caret"></span></a></th>
+  <th><span class="glyphicon glyphicon-trash"></span></th>
+</template>
+
+<template name="beerStats">
+  {{beerAmount}}
+</template>
