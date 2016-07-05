@@ -27,10 +27,10 @@ Template.beers.helpers({
    * Displays beer database
    * @returns {Beers}, the database filtered by {filter}
    */
-  beer: function() {
+  beers: function() {
     var filter = Session.get('sortBy');
+    return Beers.find({}, {sort: {name: 1}});
     //return Beers.find({}, {sort: {filter: 1}});
-    return Beers.find({}, {sort: {filter: 1}});
   }
 });
 
