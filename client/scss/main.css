@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
 
 body {
   font-family: 'Lato', Helvetica, Arial, sans-serif;
@@ -12,6 +13,18 @@ body {
 
 .container {
   width: 962px;
+}
+
+.display-container {
+  padding: 16px 24px 16px;
+  background-color: gray;
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: -1;
 }
 
 .container-table {
@@ -50,4 +63,25 @@ body {
 
 .signin-panel {
   width: 300px;
+}
+
+.beer-box {
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.beer-title {
+  font-size: 22px;
+}
+
+.beer-name {
+  font-family: 'Bree Serif', serif;
+}
+
+.beer-brewery {
+  font-size: 18px;
+}
+
+.beer-info {
+  opacity: 0.60;
 }

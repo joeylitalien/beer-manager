@@ -1,6 +1,5 @@
-import { Meteor } from 'meteor/meteor';
-
-Beers = new Meteor.Collection('beers');
+//import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
+
 });
