@@ -4,22 +4,22 @@
  * @version 1.0.2
  */
 
- Template.dashboard.helpers({
-   /**
+Template.dashboard.helpers({
+  /**
     * Computes the amount of beer selected
     * @returns total number of beers
     */
-   beerAmount: function() {
-     return Beers.find({checked: true}).count();
-   },
+  beerAmount: function() {
+    return Beers.find({checked: true}).count();
+  },
 
-   /**
+  /**
     * Computes the amount of beers in the database
     * @returns total number of beers
     */
-   beerTotal: function() {
-     return Beers.find({}).count();
-   }
+  beerTotal: function() {
+    return Beers.find({}).count();
+  }
  });
 
 Template.beers.helpers({
