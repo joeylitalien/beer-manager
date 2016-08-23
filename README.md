@@ -24,4 +24,4 @@ Ensuite, clôner le répertoire et simplement rouler `meteor`. Pour déployer l'
 Le fichier `settings.json` est ignoré par `git` pour des raisons évidentes de sécurité.
 
 
-### [Démo](http://beer-manage.meteorapp.com)
+### [Démo](http://beer-manager.meteorapp.com)
