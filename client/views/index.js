@@ -1,17 +1,17 @@
 /**
- * Main JS file to manage client and server sides
+ * Main JS file to manage client side
  * @author Joey Litalien <joey.litalien@gmail.com>
- * @version 1.0.1
+ * @version 1.0.2
  */
 
-// Creates new beer database
-Beers = new Mongo.Collection('beers');
+/**
+ * Subscribes client to beer database so they have access
+ */
+Meteor.subscribe('beers');
 
-if (Meteor.isClient) {
-  Session.set('sortBy', 'name');
-  Session.set('signInInvalid', false);
-  Session.set('addBeerInvalid', false);
-}
-
-if (Meteor.isServer) {
-}
+/**
+ * Sets session variables
+ */
+Session.set('sortBy', 'name');
+Session.set('signInInvalid', false);
+Session.set('addBeerInvalid', false);

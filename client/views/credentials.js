@@ -4,11 +4,6 @@
  * @version 1.1.0
  */
 
- /**
-  * Subscribe client to beer database so they have access
-  */
- Meteor.subscribe('beers');
-
  Template.signIn.onRendered(function() {
    /**
     * Resets sign in alerts on render
@@ -32,6 +27,9 @@
         if (err) {
           Session.set('signInInvalid', true);
         }
+        else {
+          Router.go('/selection');
+        }
       });
     }
  });
@@ -54,5 +52,6 @@
 
       // Signs out and go back home
       Meteor.logout();
+      Router.go('/');
    }
  })

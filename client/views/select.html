@@ -1,4 +1,4 @@
-<template name="dashboard">
+<template name="selectionPage">
   {{> navBar}}
   <div class="container">
     <div class="panel panel-default">
@@ -37,7 +37,7 @@
       {{> addBeer}}
     </div>
   </div>
-</template>
+</template><!-- /selectionPage -->
 
 <template name="navBar">
   <nav class="navbar navbar-default navbar-static-top">
@@ -49,24 +49,25 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">BockTomate</a>
+        <a class="navbar-brand" href="{{pathFor 'selection'}}"><span class="glyphicon glyphicon-flash"></span> BockTomate</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> {{currentUser.username}}</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-book"></span> Menu</a></li>
+          <li><a href="{{pathFor 'selection'}}"><span class="glyphicon glyphicon-ok"></span> Sélection</a></li>
+          <li><a href="{{pathFor 'menu'}}"><span class="glyphicon glyphicon-book"></span> Menu</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> {{> signOut}}</a></li>
         </ul>
       </div>
     </div>
   </nav>
-</template>
+</template><!-- /navBar -->
 
 <template name="beers">
   {{#each beers}}
     {{> beerItem}}
   {{/each}}
-</template>
+</template><!-- /beers -->
 
 <template name="beerItem">
   <tr class="{{#if isChecked}}info{{/if}}">
@@ -81,7 +82,7 @@
     <td>{{priceLg}},00$</td>
     <td><a href="#" class="delete-beer"><span class="glyphicon glyphicon-remove"></span></a></td>
   </tr>
-</template>
+</template><!-- /beerItem -->
 
 <template name="addBeer">
   <form class="general-form">
@@ -96,7 +97,7 @@
     <input type="text" class="form-control" placeholder="Prix / 1,5L (optionnel)" name="priceLg">
     <button type="submit" class="btn btn-primary general-form-btn"><span class="glyphicon glyphicon-plus"></span> Ajouter à la collection</button>
   </form>
-</template>
+</template><!-- /addBeer -->
 
 <template name="addBeerAlert">
   {{#if invalidBeer}}
@@ -104,7 +105,7 @@
     <strong>Erreur!</strong> Certains champs manquants sont obligatoires.
     </div>
   {{/if}}
-</template>
+</template><!-- /addBeerAlert -->
 
 <template name="sortBeers">
   <th><span class="glyphicon glyphicon-star"></span></th>
@@ -117,8 +118,8 @@
   <th><a href="#" class="sort-tag" id="sort-priceMd">$ / 500ml <span class="caret"></span></a></th>
   <th><a href="#" class="sort-tag" id="sort-priceLg">$ / 1,5L <span class="caret"></span></a></th>
   <th><span class="glyphicon glyphicon-trash"></span></th>
-</template>
+</template><!-- /sortBeers -->
 
 <template name="beerStats">
   {{beerAmount}}
-</template>
+</template><!-- /beerStats -->

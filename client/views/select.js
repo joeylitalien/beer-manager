@@ -4,7 +4,7 @@
  * @version 1.0.2
  */
 
-Template.dashboard.helpers({
+Template.selectionPage.helpers({
   /**
     * Computes the amount of beer selected
     * @returns total number of beers
@@ -59,7 +59,7 @@ Template.addBeer.events({
         priceLg = $('[name="priceLg"]').val();
 
     if (name && brewery && type && alcohol && priceSm && priceMd) {
-      // Inserts them into the database
+      // Securely inserts them into the database
       Meteor.call('insertBeer', {
         name: name,
         brewery: brewery,
@@ -105,7 +105,7 @@ Template.beerItem.events({
    */
   'click .toggle-beer': function(e) {
     var isChecked = e.target.checked;
-    Meteor.call('toggleBeer', this_.id, {$set: {checked: isChecked}});
+    Meteor.call('toggleBeer', this._id, isChecked);
   }
 })
 
