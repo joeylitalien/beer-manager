@@ -1,6 +1,14 @@
-//import { Meteor } from 'meteor/meteor';
+/**
+ * Main JS File
+ * @author Joey Litalien <joey.litalien@gmail.com>
+ * @version 1.0.0
+ */
 
 Meteor.publish('beers', function() {
+  /**
+   * Makes beer database available to client
+   * @return database
+   */
   return Beers.find({});
 });
 
