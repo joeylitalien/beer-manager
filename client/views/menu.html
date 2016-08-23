@@ -1,0 +1,40 @@
+
+<template name="menuPage">
+  {{> navBar}}
+  <div class="display-container">
+    <div class="wrapper">
+      <div class="row">
+        {{> selectedBeer}}
+      </div>
+    </div>
+  </div>
+</template><!-- /menuPage -->
+
+<template name="selectedBeer">
+  {{#each selectedBeer}}
+    <div class="col-sm-3">
+      <div class="beer-box">
+        <div class="beer-title">
+          {{inc @index}}&deg; <span class="beer-name">{{name}}</span>
+        </div>
+        <div class="beer-brewery">
+          <i>{{brewery}}</i>
+        </div>
+        <div class="beer-info">
+          {{type}} &mdash;
+          {{alcohol}}%
+        </div>
+        <div class="beer-info">
+          Amertume : {{ibu}} IBU
+        </div>
+        <div>
+          341ml {{priceSm}},00$ &middot;
+          500ml {{priceMd}},00$
+          {{#if priceLg}}
+            &middot; 1,5L {{priceLg}},00$
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</template><!-- /selectedBeer -->
