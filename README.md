@@ -1,17 +1,17 @@
-## Beerolog
+# Beerolog
 *Berrolog* est un outil de gestion de menu hebdomadaire pour les bars du Québec.
 
-#### Description
+### Description
 *Beerolog* permet aux bars et pubs du Québec de gérer facilement leur menu hebdomadaire de consommation alcoolisées et d'afficher rapidement leur nouvelle sélection à leurs clients.
 
-#### Implémentation
+### Implémentation
 
 Beerolog est développé entièrement avec le framework de développement web [MeteorJS](https://www.meteor.com/) et utilise [MongoDB](https://www.mongodb.com/) comme système de gestion de données NoSQL.
 
-#### Hébergement
+### Hébergement
 Présentement, *Beerolog* est temporairement hébergé via [Galaxy](https://galaxy.meteor.com/) (la plateforme d'hébergement de MeteorJS) à des fins de démonstration. Les banques de données utilisées sont hébergées à distance via [mLab](https://mlab.com/) pour assurer une non-interruption du service.
 
-#### Déploiement de l'application
+### Déploiement de l'application
 
 Pour installer MeteorJS localement, ouvrir le terminal et exécuter
 
@@ -24,4 +24,4 @@ Ensuite, clôner le répertoire et simplement rouler `meteor`. Pour déployer l'
 Le fichier `settings.json` est ignoré par `git` pour des raisons évidentes de sécurité.
 
 
-#### [Démo](http://beer-manage.meteorapp.com)
+### [Démo](http://beer-manage.meteorapp.com)
