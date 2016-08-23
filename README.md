@@ -1,5 +1,5 @@
 # Beerolog
-*Berrolog* est un outil de gestion de menu hebdomadaire pour les bars du Québec.
+*Beerolog* est un outil de gestion de menu hebdomadaire pour les bars du Québec.
 
 ### Description
 *Beerolog* permet aux bars et pubs du Québec de gérer facilement leur menu hebdomadaire de consommation alcoolisées et d'afficher rapidement leur nouvelle sélection à leurs clients.
