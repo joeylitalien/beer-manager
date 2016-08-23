@@ -60,7 +60,7 @@ Template.addBeer.events({
 
     if (name && brewery && type && alcohol && priceSm && priceMd) {
       // Inserts them into the database
-      Beers.insert({
+      Meteor.call('insertBeer', {
         name: name,
         brewery: brewery,
         type: type,
@@ -97,7 +97,7 @@ Template.beerItem.events({
    * Removes beer from database by ID
    */
   'click .delete-beer': function(event) {
-    Beers.remove(this._id);
+    Meteor.call('removeBeer', this._id);
   },
 
   /**
@@ -105,7 +105,7 @@ Template.beerItem.events({
    */
   'click .toggle-beer': function(e) {
     var isChecked = e.target.checked;
-    Beers.update(this._id, {$set: {checked: isChecked}});
+    Meteor.call('toggleBeer', this_.id, {$set: {checked: isChecked}});
   }
 })
 
