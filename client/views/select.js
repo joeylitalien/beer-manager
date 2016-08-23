@@ -105,7 +105,7 @@ Template.beerItem.events({
    */
   'click .toggle-beer': function(e) {
     var isChecked = e.target.checked;
-    Meteor.call('toggleBeer', this_.id, {$set: {checked: isChecked}});
+    Meteor.call('toggleBeer', this._id, isChecked);
   }
 })
 
