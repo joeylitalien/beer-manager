@@ -27,6 +27,9 @@
         if (err) {
           Session.set('signInInvalid', true);
         }
+        else {
+          Router.go('/selection');
+        }
       });
     }
  });
@@ -49,5 +52,6 @@
 
       // Signs out and go back home
       Meteor.logout();
+      Router.go('/');
    }
  })
